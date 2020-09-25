@@ -7,8 +7,9 @@ Game 0 Assignment
 from MyUtilities import *
 
 def InputTimes():
+    #Input validation for user input for amount of times dice rolled - ensures it is a digit
     while True:
-        times = input("How many times would you like to roll your die? (Enter 0 if you would like to quit this application.) ")
+        times = input("How many times would you like to roll your die? (Enter 0 to quit the application.) ")
         if times.isdigit():
             return times
             break   
@@ -17,8 +18,9 @@ def InputTimes():
             continue     
 
 def InputSides():
+    #Input validation for user input for how many sides the die has - ensures it is a digit and is also a number larger than 1 (doesn't allow 1 or 0).
     while True:
-        sides = input("How many sides would you like the die to have? ")
+        sides = input("How many sides would you like the die to have? (Enter a number larger than 1.) ")
         if sides.isdigit() and int(sides) >= 2:
             return sides
             break
@@ -27,6 +29,7 @@ def InputSides():
             continue
 
 def InputTarget():
+    #Input validation for user input for the desired target number - ensures it is a digit
     while True:
         target = input("What would you like the target number to be? ")
         if target.isdigit():
@@ -44,11 +47,10 @@ def Main():
         sides = int(InputSides())
         target = int(InputTarget())
         if target == 0:
-            output = DieRoller(times, sides)
-        elif target >= 1: 
-            output = TargetRoller(times, sides, target)
-        print(output)
-        
-        # print(f"output is {output}") #can comment back in for testing purposes - made it easier to see what was output and what was numbers rolled
-        
+            output = "The sum of all dice rolled is "+str(DieRoller(times, sides))+"."
+        elif target > 0: 
+            output = "The total number of times the dice rolled greater than or equal to the target number is "+str(TargetRoller(times, sides, target))+"."
+        print("\n"+ output +"\n")
+
+
 Main()
