@@ -47,8 +47,8 @@ def Main():
             output = DieRoller(times, sides)
         elif target >= 1: 
             output = TargetRoller(times, sides, target)
+        print(output)
         
-        print(f"output is {output}")
-                
-
+        # print(f"output is {output}") #can comment back in for testing purposes - made it easier to see what was output and what was numbers rolled
+        
 Main()

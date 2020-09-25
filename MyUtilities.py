@@ -14,7 +14,7 @@ def DieRoller(times, sides):
     for i in range(times):
         roll = random.randint(1, sides)
         total += roll
-        print(roll)
+        # print(roll) #Had this for testing purposes - can comment back in to see the numbers rolled for each iteration
     return total
 
 def TargetRoller(times, sides, target):
@@ -22,7 +22,7 @@ def TargetRoller(times, sides, target):
     total = 0
     for i in range(times):
         roll = random.randint(1, sides)
-        print(roll)
+        # print(roll) #Had this for testing purposes = can comment back in to see the numbers rolled for each iteration
         if roll >= target:
             total += 1
     return total
