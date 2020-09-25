@@ -17,15 +17,6 @@ def DieRoller(times, sides):
         print(roll)
     return total
 
-# while True:
-#     print(DieRoller(5, 6))
-#     input()
-
-# while True:
-#     os.system('cls') #issues a clear screen on powershell
-#     print("Strength: "+str(DieRoller(3, 6)))
-#     input()
-
 def TargetRoller(times, sides, target):
     # rolls any amount of dice (times) with any amount of sides (sides) and returns how many times a roll was either equal to or greater than a target number (target)
     total = 0
@@ -36,8 +27,5 @@ def TargetRoller(times, sides, target):
             total += 1
     return total
 
-# while True:
-#     print(TargetRoller(5, 6, 4))
-#     input()        
-        
+
     

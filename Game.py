@@ -9,15 +9,12 @@ from MyUtilities import *
 def InputTimes():
     while True:
         times = input("How many times would you like to roll your die? (Enter 0 if you would like to quit this application.) ")
-        # print(times)
         if times.isdigit():
             return times
             break   
         else:
             print("Please input a valid number.")
-            continue    
-        if times.isdigit() and times == 0:
-            break    
+            continue     
 
 def InputSides():
     while True:
@@ -39,16 +36,19 @@ def InputTarget():
             print("Please input a valid number.")
             continue
 
-while True:
-    times = int(InputTimes())
-    if times == 0:
-        break
-    sides = int(InputSides())
-    target = int(InputTarget())
-    if target == 0:
-        output = DieRoller(times, sides)
-    elif target >= 1: 
-        output = TargetRoller(times, sides, target)
-    
-    print(f"output is {output}")
-            
+def Main():
+    while True:
+        times = int(InputTimes())
+        if times == 0:
+            break
+        sides = int(InputSides())
+        target = int(InputTarget())
+        if target == 0:
+            output = DieRoller(times, sides)
+        elif target >= 1: 
+            output = TargetRoller(times, sides, target)
+        
+        print(f"output is {output}")
+                
+
+Main()
