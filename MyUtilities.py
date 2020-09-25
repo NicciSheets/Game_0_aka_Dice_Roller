@@ -31,7 +31,7 @@ def TargetRoller(times, sides, target):
     total = 0
     for i in range(times):
         roll = random.randint(1, sides)
-        # print(roll)
+        print(roll)
         if roll >= target:
             total += 1
     return total
