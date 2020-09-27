@@ -4,8 +4,6 @@ Andrea "Nicci" Sheets
 Game 0 Assignment - Take 2
 '''
 
-# This seems to run correctly, however it NEVER returns the individual dice that's rolled each time when I comment back in the print(roll) in the MyUtilities file, BUT the first Game.py code I wrote shows the individual dice rolled.  I can't see why this happens!!
-
 from MyUtilities import *
 
 def InputTimes():
@@ -13,21 +11,22 @@ def InputTimes():
         times = input("How many times would you like to roll your die? (Enter 0 to quit the application.) ")
         try:
             times = int(times)
-            return times
         except:
             print("Please use numeric digits.")
             continue
         if times < 0:
             print("Please enter a positive number.")
             continue
+        elif times == 0:
+            break
         break
+    return times
 
 def InputSides():        
     while True:
         sides = input("How many sides would you like the die to have? ")
         try: 
             sides = int(sides)
-            return sides
         except:
             print("Please use numeric digits.")
             continue
@@ -35,17 +34,21 @@ def InputSides():
             print("Please enter a positive number larger than 1.")
             continue
         break
+    return sides
 
 def InputTarget():
     while True:
         target = input("What would you like the target number to be? ")
         try:
             target = int(target)
-            return target
         except:
             print("Please use numeric digits.")
             continue
+        if target < 0:
+            print("Please enter a positive number.")
+            continue
         break
+    return target
 
 def Main():
     while True:
